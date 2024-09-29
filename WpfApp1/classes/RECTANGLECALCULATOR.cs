@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace WpfApp1.classes
 {
-    public class RECTANGLECALCULATOR : INTEGRALCALCULATOR
+    public class RECTANGLECALCULATOR: INTEGRALCALCULATOR
     {
-        public double Calculate(double lower, double upper, int count, Func<double, double> func)
+        public double Calculate(double lower, double upper, int count, Func <double, double> func)
         {
             double h = (upper - lower) / count;
             double sum = 0.0;
