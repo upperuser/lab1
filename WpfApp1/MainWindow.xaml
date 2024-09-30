@@ -5,12 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="350" Width="700">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20" />
-            <ColumnDefinition Width ="auto" />
+            <ColumnDefinition Width ="140" />
             <ColumnDefinition Width="*" />
+            <ColumnDefinition Width ="20" />
+            
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
@@ -21,6 +23,7 @@
             <RowDefinition Height ="auto"/>
             <RowDefinition Height ="auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height ="20"/>
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="1" Grid.Column="1">Верхний предел</TextBlock>
         <TextBlock Grid.Row="2" Grid.Column="1">Нижний предел</TextBlock>
