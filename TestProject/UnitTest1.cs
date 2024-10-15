@@ -14,7 +14,7 @@ namespace WpfApp1.Tests
         public void Setup()
         {
             _rectangleCalculator = new RectandgleCalculate();
-            _func = x => 2 * x - Math.Log(2 * x) + 234;
+            _func = x => 10 * x - Math.Log(14 * x);
             _trapCalculator = new TrapCalculate();
         }
 
@@ -24,9 +24,9 @@ namespace WpfApp1.Tests
             double lower = 1;
             double upper = 2;
             int count = 10000;
-            Func<double, double> func = x => 2 * x - Math.Log(2 * x) + 234;
-            double result = _rectangleCalculator.Calculate(lower, upper, count, func);
-            double expected = 235.9;
+
+            double result = _rectangleCalculator.Calculate(lower, upper, count, _func);
+            double expected = 11.974648;
             Assert.AreEqual(expected, result, 0.1);
         }
 
@@ -36,9 +36,9 @@ namespace WpfApp1.Tests
             double lower = 1;
             double upper = 2;
             int count = 10000;
-            Func<double, double> func = x => 2 * x - Math.Log(2 * x) + 234;
-            double result = _trapCalculator.Calculate(lower, upper, count, func);
-            double expected = 235.9;
+
+            double result = _trapCalculator.Calculate(lower, upper, count, _func);
+            double expected = 11.974648;
             Assert.AreEqual(expected, result, 0.1);
         }
 
@@ -48,7 +48,6 @@ namespace WpfApp1.Tests
             double lower = 2;
             double upper = 1;
             int count = 100;
-            Func<double, double> func = x => 2 * x - Math.Log(2 * x) + 234;
 
             Assert.ThrowsException<ArgumentException>(() => _rectangleCalculator.Calculate(lower, upper, count, _func));
         }
@@ -60,7 +59,6 @@ namespace WpfApp1.Tests
             double lower = 1;
             double upper = 2;
             int count = -1;
-            Func<double, double> func = x => 2 * x - Math.Log(2 * x) + 234;
             Assert.ThrowsException<ArgumentOutOfRangeException>(() => _rectangleCalculator.Calculate(lower, upper, count, _func));
         }
         [TestMethod]
@@ -79,8 +77,7 @@ namespace WpfApp1.Tests
             double lower = 2;
             double upper = 1;
             int count = 100;
-            Func<double, double> func = x => 2 * x - Math.Log(2 * x) + 234;
-
+           
             Assert.ThrowsException<ArgumentException>(() => _trapCalculator.Calculate(lower, upper, count, _func));
         }
 
@@ -91,7 +88,6 @@ namespace WpfApp1.Tests
             double lower = 1;
             double upper = 2;
             int count = -1;
-            Func<double, double> func = x => 2 * x - Math.Log(2 * x) + 234;
             Assert.ThrowsException<ArgumentOutOfRangeException>(() => _trapCalculator.Calculate(lower, upper, count, _func));
         }
         [TestMethod]
