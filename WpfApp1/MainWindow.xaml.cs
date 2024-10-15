@@ -33,21 +33,21 @@ namespace WpfApp1
             double lowerBound = Convert.ToDouble(tbLowerBound.Text);
             int count = Convert.ToInt32(tbCount.Text);
 
-            INTEGRALCALCULATOR calculatorIntegral = GetCalculator();
+            IntehralCalculator calculatorIntegral = GetCalculator();
             double answer = calculatorIntegral.Calculate(lowerBound, upperBound, count, x => 10 * x - Math.Log(14 * x));
             tbAnswer.Text = answer.ToString();
         }
 
-        private INTEGRALCALCULATOR GetCalculator()
+        private IntehralCalculator GetCalculator()
         {
             switch (cmbBoxIntegralType.SelectedIndex)
             {
                 case 0:
-                    return new RECTANGLECALCULATOR();
+                    return new RectandgleCalculate();
                 case 1:
-                    return new TRAPCALCULATOR();
+                    return new TrapCalculate();
                 default:
-                    return new RECTANGLECALCULATOR();
+                    return new RectandgleCalculate();
             }
 
         }

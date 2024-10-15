@@ -6,10 +6,16 @@ using System.Threading.Tasks;
 
 namespace WpfApp1.classes
 {
-    public class TRAPCALCULATOR : INTEGRALCALCULATOR
+    public class TrapCalculate : IntehralCalculator
     {
         public double Calculate(double lower, double upper, int count, Func<double, double> func)
         {
+            if (func== null)
+            { throw new ArgumentException("не передана функция"); }
+            if (upper < lower)
+            { throw new ArgumentException("нижняя граница больше верхней границы"); }
+            if (count < 0)
+            { throw new ArgumentOutOfRangeException("негатиыный каунт"); }
             double partlength = (upper - lower) / count;
             double answer = 0;
             double x0 = lower;

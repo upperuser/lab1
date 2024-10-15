@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace WpfApp1.classes
 {
-    public interface INTEGRALCALCULATOR
+    public interface IntehralCalculator
     {
         double Calculate(double lower, double upper, int count, Func<double, double> func);
+
     }
 }
